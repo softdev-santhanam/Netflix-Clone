@@ -9,12 +9,18 @@ import Payment from '../components/Payment';
 
 
 const ProfileScreen = () => {
-  const user = useSelector(selectUser);
+
+
+  const name = useSelector(selectUser);
+  var nameVal = "";
+  if (name) {
+      nameVal = name.email;
+  }
 
   return (
     <Container>
+      <Navbar />
       <div className='profileScreen'>
-        <Navbar />
         <div className='profileScreen-body'>
           <h1>Edit Profile</h1>
           <div className='profileScreen-info'>
@@ -23,7 +29,7 @@ const ProfileScreen = () => {
               alt='avatar' 
             />
             <div className='profileScreen-details'>
-              <h2>{user.email}</h2>
+              <h2>{nameVal}</h2>
               <div className='profileScreen-plans'>
                 <Payment />
                 {/* Plans */}

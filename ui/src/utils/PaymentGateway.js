@@ -1,10 +1,10 @@
 
 export default async function displayRazorPay() {
-    const data = await fetch("http://localhost:5000/razorpay", {
+    const data = await fetch("http://localhost:4000/razorpay", {
       method: "POST",
     }).then((t) => t.json());
    
-    console.log(data);
+    // console.log(data);
    
     const options = {
       key: "rzp_test_08aVXLQMyXDDCN",
@@ -12,7 +12,7 @@ export default async function displayRazorPay() {
       amount: data.amount,
       name: "SanthanaKrishnan",
       description: "Wallet Transaction",
-      image: "http://localhost:5000/logo.jpeg",
+      image: "http://localhost:4000/logo.jpeg",
       order_id: data.id,
       handler: function (response) {
         alert("PAYMENT ID ::" + response.razorpay_payment_id);

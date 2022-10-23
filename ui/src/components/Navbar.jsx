@@ -12,14 +12,15 @@ export default function Navbar({ isScrolled }) {
 
   /* creating array of link for nav list */
   const links = [
-    { name: "Home", link: "/" },
-    { name: "TV Shows", link: "/tv" },
-    { name: "Movies", link: "/movies" },
-    { name: "My List", link: "/myList" },
+    { id:1, name: "Home", link: "/" },
+    { id:2, name: "TV Shows", link: "/tv" },
+    { id:3, name: "Movies", link: "/movies" },
+    { id:4, name: "My List", link: "/myList" },
   ];
 
   return (
     <Container>
+      <div className="navbar">
       <nav className={`${isScrolled ? "scrolled" : ""} flex`}>
 
         <div className="left flex a-center">
@@ -29,16 +30,6 @@ export default function Navbar({ isScrolled }) {
             <img src={logo} alt="Logo" className="netflix-logo"/>
           </div>
 
-          {/* nav list */}
-          <ul className="links flex">
-            {links.map(({ name, link }) => {
-              return (
-                <li key={name}>
-                  <Link to={link}>{name}</Link>
-                </li>
-              );
-            })}
-          </ul>
         </div>
 
         <div className="right flex a-center">
@@ -80,10 +71,6 @@ export default function Navbar({ isScrolled }) {
 
       <div className="link-mobile-container">
         <ul className="links-mobile">
-          {/* Why is a Map () important in JavaScript?
-          Map is a collection of elements where each element is stored as a Key, value pair. 
-          Map object can hold both objects and primitive values as either key or value. 
-          When we iterate over the map object it returns the key, value pair in the same order as inserted. */}
           {links.map(({ name, link }) => {
             return (
               <li key={name}>
@@ -93,24 +80,30 @@ export default function Navbar({ isScrolled }) {
           })}
         </ul>
       </div>
+      </div>
     </Container>
   );
 }
-
+// eslint-disable-next-line
+{/* Why is a Map () important in JavaScript?
+          Map is a collection of elements where each element is stored as a Key, value pair. 
+          Map object can hold both objects and primitive values as either key or value. 
+          When we iterate over the map object it returns the key, value pair in the same order as inserted. */}
 /* Css for Header */
 const Container = styled.div`
   .scrolled {
-    background-color: black;
+    background-color: #111;
+    height: 100px;
   }
   nav {
-    position: fixed;
+    position: fixed !important;
     top: 0;
-    height: 5.5rem;
+    height: 5rem;
     width: 100%;
     justify-content: space-between;
     font-weight: 800;
     top: 0;
-    z-index: 2;
+    z-index: 100;
     align-items: center;
     transition: all 1s ease-in-out;
     .left {
@@ -198,30 +191,21 @@ const Container = styled.div`
   }
     }
 }
-/* For Mobile Screen Size */
-@media (max-width: 720px) {
-  .links {
-    display: none;
+  .link-mobile-container {
+    width: 100%;
+    margin-top: 5px;
   }
-}
-@media (min-width: 720px) {
   .links-mobile {
-    display: none;
-  }
-}
-@media only screen and (min-width: 0px) and (max-width: 720px) {
-
-  .links-mobile {
-    position: sticky;
-    z-index: 100;
+    position: fixed !important;
     display: flex;
     margin-top: 70px;
     margin-bottom: 5px;
+    margin-right: 30px;
     font-weight: 800;
     width: 100%;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
-    
+    z-index: 100;
 
     list-style-type: none;
         gap: 2rem;
@@ -232,5 +216,10 @@ const Container = styled.div`
           }
         }
   }
+
+.navbar {
+        display: grid;
+        grid-template-columns: repeat();
+        width: 60%;
 }
 `;

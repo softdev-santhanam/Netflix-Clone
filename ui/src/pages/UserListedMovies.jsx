@@ -24,6 +24,7 @@ export default function UserListedMovies() {
     if (email) {
       dispatch(getUsersLikedMovies(email));
     }
+    // eslint-disable-next-line
   }, [email]);
 
   window.onscroll = () => {
@@ -36,8 +37,8 @@ export default function UserListedMovies() {
       <Navbar isScrolled={isScrolled} />
       <div className="content flex column">
         <h1>My List</h1>
-        <div className="grid flex">
-          {movies.map((movie, index) => {
+        <div className="grid flex"> {
+          movies?.map((movie, index) => {
             return (
               <Card
                 movieData={movie}
@@ -46,7 +47,8 @@ export default function UserListedMovies() {
                 isLiked={true}
               />
             );
-          })}
+          })
+        }
         </div>
       </div>
     </Container>

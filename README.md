@@ -1,5 +1,7 @@
 # Netflix-Clone
+Netflix clone with React, Node, Express, MongoDB, Firebase, Razorpay
 
+Deployed in Heroku: https://youcodex-netflixclone.herokuapp.com/
 Features:
 
 Sign Up & Login function using Firebase authentication.

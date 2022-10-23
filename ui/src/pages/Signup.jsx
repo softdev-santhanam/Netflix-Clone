@@ -149,6 +149,76 @@ const Container = styled.div`
       }
     }
   }
+  @media only screen and (min-width: 0px) and (max-width: 720px) {
+    .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100vh;
+    width: 100vw;
+    display: grid;
+    grid-template-rows: 15vh 85vh;
+    .body {
+      gap: 1rem;
+      .text {
+        gap: 1rem;
+        text-align: center;
+        font-size: 2rem;
+        h1 {
+          font-size: 1rem;
+          margin-bottom: 15px;
+        }
+        h2 {
+          font-size: 0.7rem;
+          margin-bottom: 15px;
+        }
+        h3 {
+          font-size: 0.7rem;
+          margin-bottom: 15px;
+        }
+      }
+      .form {
+        display: grid;
+        grid-template-rows: ${({ showPassword }) =>
+          showPassword ? "1fr 1fr" : "2fr 1fr"};
+        width: 50%;
+        input {
+          width: 130px;
+          color: black;
+          border: none;
+          padding: 9px;
+          font-size: 0.7rem;
+          border: 1px solid black;
+          border-radius: 2px;
+          &:focus {
+            outline: none;
+          }
+        }
+        button {
+          padding: 9px;
+          background-color: #e50914;
+          border: none;
+          cursor: pointer;
+          color: white;
+          font-weight: bolder;
+          font-size: 1.05rem;
+        }
+      }
+      button {
+        margin-top: -15px;
+        padding: 9px;
+        background-color: #e50914;
+        border: none;
+        cursor: pointer;
+        color: white;
+        border-radius: 0.2rem;
+        font-weight: bolder;
+        font-size: 0.8rem;
+      }
+    }
+  }
+  }
 `;
 
 export default Signup;

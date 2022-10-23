@@ -17,9 +17,16 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+/* 
+const URI =
+    "mongodb+srv://santhanam:1ckDshOPWfcyQgtF@cluster0.97rbtqj.mongodb.net/Netflix"; */
+
+const URI =
+"mongodb://localhost:27017/netflix";
+
 
 mongoose
-  .connect("mongodb://localhost:27017/netflix", {
+  .connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
@@ -63,6 +70,10 @@ app.post("/razorpay", async (req, res) => {
   }
 });
 
-app.listen(5000, () => {
-  console.log("server started on port 5000");
+/* app.use(express.static(path.join(__dirname + "/public"))) */
+
+var PORT = process.env.PORT || 4000
+
+app.listen(PORT, () => {
+  console.log("server started on port 4000");
 });

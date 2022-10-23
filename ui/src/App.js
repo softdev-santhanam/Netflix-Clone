@@ -17,9 +17,11 @@ import { firebaseAuth } from "./utils/firebase-config";
 import { useEffect } from "react";
 
 export default function App() {
+
+  //eslint-disable-next-line
   const user = useSelector(selectUser)
 
-  console.log(user);
+  // console.log(user);
 
   const dispatch = useDispatch();
 
