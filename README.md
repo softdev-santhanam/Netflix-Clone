@@ -17,7 +17,7 @@ Video player function is enabled.
 
 ![Screenshot from 2022-10-11 12-02-30](https://user-images.githubusercontent.com/110757279/195013476-dd2b6401-9378-486f-91ee-32d9b497a4c6.png)
 
-![Screenshot from 2022-10-11 11-57-39](https://user-images.githubusercontent.com/110757279/195013547-78df9aac-fdc2-44d8-b02c-11c3589d3b98.png)
+![Screenshot from 2022-10-23 19-18-20](https://user-images.githubusercontent.com/110757279/197396007-1e983ce7-fa77-49b3-ba10-e9aeeec8672d.png)
 
 ![Screenshot from 2022-10-11 11-58-18](https://user-images.githubusercontent.com/110757279/195013554-44a5fad4-f18b-4d46-bb1a-5ca44a26d7eb.png)
 
