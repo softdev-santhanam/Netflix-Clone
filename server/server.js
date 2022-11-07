@@ -71,7 +71,7 @@ app.post("/razorpay", async (req, res) => {
 });
 
 app.use(express.static(path.join(__dirname + "/public")))
-
+// Port
 var PORT = process.env.PORT || 5000
 
 app.listen(PORT, () => {
