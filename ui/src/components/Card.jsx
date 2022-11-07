@@ -46,7 +46,7 @@ export default React.memo(function Card({ index, movieData, isLiked = false }) {
       <img
         src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
         alt="card"
-        onClick={() => navigate("/player")}
+        onClick={() => navigate("/movie-details")}
       />
 
       {isHovered && (
@@ -55,25 +55,25 @@ export default React.memo(function Card({ index, movieData, isLiked = false }) {
             <img
               src={`https://image.tmdb.org/t/p/w500${movieData.image}`}
               alt="card"
-              onClick={() => navigate("/player")}
+              onClick={() => navigate("/movie-details")}
             />
             <video
               src={video}
               autoPlay={true}
               loop
               muted
-              onClick={() => navigate("/player")}
+              onClick={() => navigate("/movie-details")}
             />
           </div>
           <div className="info-container flex column">
-            <h3 className="name" onClick={() => navigate("/player")}>
+            <h3 className="name" onClick={() => navigate("/movie-details")}>
               {movieData.name}
             </h3>
             <div className="icons flex j-between">
               <div className="controls flex">
                 <IoPlayCircleSharp
                   title="Play"
-                  onClick={() => navigate("/player")}
+                  onClick={() => navigate("/movie-details")}// movie-details page instead of player
                 />
                 <RiThumbUpFill title="Like" />
                 <RiThumbDownFill title="Dislike" />

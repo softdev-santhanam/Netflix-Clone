@@ -3,7 +3,9 @@ import styled from "styled-components";
 import { BsArrowLeft } from "react-icons/bs";
 import { useNavigate } from "react-router-dom";
 import video from "../assets/video.webm";
+
 export default function Player() {
+
   const navigate = useNavigate();
 
   return (
