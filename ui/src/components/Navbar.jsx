@@ -28,9 +28,10 @@ export default function Navbar({ isScrolled }) {
           {/* logo */}
           <div className="brand flex a-center j-center">
             <img src={logo} alt="Logo" className="netflix-logo"/>
+            <h3 className="title-name">Movie Box Streaming</h3>
           </div>
 
-        </div>
+        </div> 
 
         <div className="right flex a-center">
           
@@ -59,6 +60,7 @@ export default function Navbar({ isScrolled }) {
           </div>
           
           {/* profile icon */}
+          <div className="nav-avatar">
           <Link to="/profile">
                 <img 
                     src='https://avatars.githubusercontent.com/u/110757279?s=400&u=81dc9146f7e613b0a6dee66d023a9aa9816af881&v=4' 
@@ -66,6 +68,7 @@ export default function Navbar({ isScrolled }) {
                     className='nav-avatar'
                 />
           </Link>
+          </div>
         </div>
       </nav>
 
@@ -111,6 +114,8 @@ const Container = styled.div`
       .brand {
         img {
           height: 4rem;
+          margin-left: 50px;
+          margin-right: 5px;
         }
       }
       .links {
@@ -185,9 +190,8 @@ const Container = styled.div`
       .nav-avatar {
       cursor: pointer;
       width: 50px;
-      margin-right: 15px;
+      margin-right: 50px;
       border-radius: 50%;
-      border: 1px solid #f34242;
   }
     }
 }
@@ -222,4 +226,13 @@ const Container = styled.div`
         grid-template-columns: repeat();
         width: 60%;
 }
+
+@media only screen and (max-width: 600px) {
+  .title-name {
+    font-size: 12px;
+  }
+  .brand {
+    margin-left: -40px;
+  }
+} 
 `;
